@@ -13,14 +13,6 @@ const Projects = () => {
   const [active, setActive] = useState(false);
   const [productData, setProductData] = useState([]);
 
-  // const navigate = useNavigate();
-  // const handleNext = () => {
-  //   navigate("/contact");
-  // };
-  // const handlePrevious = () => {
-  //   navigate("/about");
-  // };
-
   useEffect(() => {
     setProductData(data);
   }, []);
@@ -75,7 +67,7 @@ const Projects = () => {
                       GitHub
                     </button>
                   </a>
-                  <a target="_blank">
+                  <a href={item.videoLink} target="_blank">
                     <button className="videoBtn">
                       <DuoIcon />
                       Video

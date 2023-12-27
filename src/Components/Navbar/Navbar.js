@@ -8,6 +8,7 @@ import CloseIcon from "@mui/icons-material/Close";
 import "./Navbar.css";
 import { motion } from "framer-motion";
 import image from "../../assests/Images/Image-removebg-preview.png";
+import NorthRoundedIcon from "@mui/icons-material/NorthRounded";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -39,6 +40,11 @@ const Navbar = () => {
   const setLight = () => {
     localStorage.setItem("theme", "light");
     document.documentElement.setAttribute("data-theme", "light");
+  };
+
+  const handleTop = () => {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
   };
 
   return (
@@ -150,6 +156,11 @@ const Navbar = () => {
             </div>
           )}
         </span>
+      </div>
+      <div className="moveToTopBtn">
+        <button onClick={() => handleTop()} id="myBtn" className="link">
+          <NorthRoundedIcon />
+        </button>
       </div>
     </div>
   );
