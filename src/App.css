@@ -85,3 +85,10 @@ body {
   border-radius: 50%;
   transition: all 400ms ease-out;
 }
+
+@media screen and (max-width: 400px) {
+  .cursor,
+  .cursor-pointer {
+    display: none;
+  }
+}
