@@ -1,0 +1,87 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Open Sans", sans-serif;
+  box-sizing: border-box;
+}
+
+:root {
+  --white: white;
+  --black: black;
+  --grey: #ebeef1;
+  --box-shadow-bottom: rgba(0, 0, 0, 0.3);
+  --box-shadow-top: rgba(255, 255, 255, 0.7);
+  --red: rgb(250, 93, 93);
+  --darkgrey: rgb(168, 168, 168);
+}
+
+body {
+  background-color: var(--grey);
+  color: var(--black);
+}
+
+/*================= Dark Theme =================*/
+[data-theme="dark"] {
+  --white: white;
+  --black: black;
+  --grey: #ebeef1;
+  --darkgrey: rgb(45, 43, 43);
+}
+/*================= End Of Dark Theme =================*/
+
+/*================= Light Theme =================*/
+[data-theme="light"] {
+  --white: black;
+  --black: #ebeef1;
+  --grey: black;
+  --box-shadow-bottom: rgba(255, 255, 255, 0.7);
+  --box-shadow-top: rgba(0, 0, 0, 0.3);
+  --darkgrey: rgb(168, 168, 168);
+}
+
+/*================= Custom Scroll-Bar =================*/
+/*================= Width =================*/
+::-webkit-scrollbar {
+  width: 0.3rem;
+  height: 0.3rem;
+}
+
+/*================= Track =================*/
+::-webkit-scrollbar-track {
+  background: var(--grey);
+}
+
+/*================= Handle =================*/
+::-webkit-scrollbar-thumb {
+  background: var(--black);
+  border-radius: 3rem;
+}
+/*================= End Of Custom Scroll-Bar =================*/
+
+.cursor {
+  position: fixed;
+  transform: translateX(-50%) translateY(-50%);
+  pointer-events: none;
+  background-color: var(--black);
+  z-index: 10000;
+  border: 2px solid var(--black);
+  height: 0.3rem;
+  width: 0.3rem;
+  border-radius: 50%;
+  transition: all 200ms ease-out;
+}
+
+.cursor-pointer {
+  position: fixed;
+  transform: translateX(-50%) translateY(-50%);
+  pointer-events: none;
+  background-color: transparent;
+  z-index: 10000;
+  border: 2px solid var(--black);
+  height: 2rem;
+  width: 2rem;
+  border-radius: 50%;
+  transition: all 400ms ease-out;
+}
