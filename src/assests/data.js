@@ -22,10 +22,10 @@ export const data = [
     image: QuizApp,
     title: "Quiz App",
     description:
-      "Podcast Platform integrated with Firebase, Redux Toolkit for state management, and Firebase for authentication, storage, and database features.In the Podcast Page, we can search the podcasts with the help of Title and in the Create a Podcast Page we can create a New Podcast.",
+      "Several Actions includes in this quiz are 1. Check : Allows to check the answer when you click the button Check, 2. Resume : You can resume your quiz any time where you left, 3. Sound : Sound comes when you check and answer is wrong or right.This Quiz App has total 35 questions of 7 different types.",
     techStack: "HTML, CSS, JavaScript, ReactJS, ContextAPI.",
-    github: "https://github.com/alladasaivamsi/Quiz-Nicole-TheMathLady",
-    liveLink: "https://quiz-nicole-the-math-lady-alladasaivamsi.vercel.app/",
+    github: "https://github.com/alladasaivamsi/Quiz-App.git",
+    liveLink: "https://quizapp-saivamsi.vercel.app/",
     videoLink:
       "https://drive.google.com/file/d/1j14C2FUCLi35wrqCPwGA6XUI_Jo42sNX/view?usp=sharing",
   },
