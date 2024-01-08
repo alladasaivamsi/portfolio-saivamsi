@@ -5,6 +5,7 @@ import Projects from "./Components/Projects/Projects";
 import Navbar from "./Components/Navbar/Navbar";
 import Contact from "./Components/Contact/Contact";
 import { useEffect } from "react";
+import { ToastContainer } from "react-toastify";
 
 function App() {
   var cursor;
@@ -24,6 +25,7 @@ function App() {
 
   return (
     <div>
+      <ToastContainer />
       <div className="cursor" id="cursor" />
       <div className="cursor-pointer" id="cursor-pointer" />
       <Navbar />

@@ -1,35 +1,49 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import "./Contact.css";
-import LocalPhoneRoundedIcon from "@mui/icons-material/LocalPhoneRounded";
 import EmailRoundedIcon from "@mui/icons-material/EmailRounded";
 import PersonRoundedIcon from "@mui/icons-material/PersonRounded";
 import MessageRoundedIcon from "@mui/icons-material/MessageRounded";
-import FmdGoodRoundedIcon from "@mui/icons-material/FmdGoodRounded";
-import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import GitHubIcon from "@mui/icons-material/GitHub";
-import { motion } from "framer-motion";
+import emailjs from "@emailjs/browser";
+import "react-toastify/dist/ReactToastify.css";
+import { toast } from "react-toastify";
 
 const Contact = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [mobile, setMobile] = useState("");
   const [message, setMessage] = useState("");
+
+  const form = useRef();
+  const handleOnSubmit = (e) => {
+    e.preventDefault();
+    emailjs
+      .sendForm(
+        "service_2n0k8bp",
+        "template_4zb6hfh",
+        form.current,
+        "s1-QnT8-60qrvGI2T"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+    setName("");
+    setEmail("");
+    setMessage("");
+    toast.success("Email Send Successfully!");
+  };
 
   return (
     <div className="container">
       <div className="contact">
-        <h2
-          className="contact-heading"
-          initial={{ opacity: 0, y: -50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
-        >
-          Contact Me
-        </h2>
+        <h2 className="contact-heading">Contact Me</h2>
         <div className="contact-data">
-          <form action="https://formspree.io/f/xzblnldw" method="post">
+          <form ref={form} onSubmit={handleOnSubmit}>
             <div className="fname">
-              <label for="fname">
+              <label htmlFor="name">
                 <PersonRoundedIcon />
                 &nbsp;Name
               </label>
@@ -44,7 +58,7 @@ const Contact = () => {
               />
             </div>
             <div className="email">
-              <label for="email">
+              <label htmlFor="email">
                 <EmailRoundedIcon />
                 &nbsp;Email
               </label>
@@ -58,23 +72,8 @@ const Contact = () => {
                 autoComplete="off"
               />
             </div>
-            <div className="mobile">
-              <label for="mobile">
-                <LocalPhoneRoundedIcon />
-                &nbsp;Mobile
-              </label>
-              <input
-                type="number"
-                id="mobile"
-                name="mobile"
-                value={mobile}
-                placeholder="Enter your Mobile Number"
-                onChange={(e) => setMobile(e.target.value)}
-                autoComplete="off"
-              />
-            </div>
             <div className="message">
-              <label for="message">
+              <label htmlFor="message">
                 <MessageRoundedIcon />
                 &nbsp;Message
               </label>
@@ -88,8 +87,8 @@ const Contact = () => {
                 autoComplete="off"
               />
             </div>
-            <button type="submit" className="sendBtn">
-              Send Message
+            <button type="submit" className="sendBtn" value="Send">
+              Message
             </button>
           </form>
         </div>

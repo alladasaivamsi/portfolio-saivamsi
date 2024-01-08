@@ -67,12 +67,6 @@ const Projects = () => {
                       GitHub
                     </button>
                   </a>
-                  <a href={item.videoLink} target="_blank">
-                    <button className="videoBtn">
-                      <DuoIcon />
-                      Video
-                    </button>
-                  </a>
                 </div>
               </div>
             </li>

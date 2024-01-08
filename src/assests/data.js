@@ -26,8 +26,6 @@ export const data = [
     techStack: "HTML, CSS, JavaScript, ReactJS, ContextAPI.",
     github: "https://github.com/alladasaivamsi/Quiz-App.git",
     liveLink: "https://quizapp-saivamsi.vercel.app/",
-    videoLink:
-      "https://drive.google.com/file/d/1j14C2FUCLi35wrqCPwGA6XUI_Jo42sNX/view?usp=sharing",
   },
   {
     id: 3,
@@ -61,7 +59,5 @@ export const data = [
     techStack: "HTML, CSS, JavaScript.",
     github: "https://github.com/alladasaivamsi/zomato-clonee",
     liveLink: "https://alladasaivamsi.github.io/zomato-clonee/",
-    videoLink:
-      "https://drive.google.com/file/d/1KUxx3Vv866Lr-qVaOMOserua8_KQh5cT/view?usp=sharing",
   },
 ];
