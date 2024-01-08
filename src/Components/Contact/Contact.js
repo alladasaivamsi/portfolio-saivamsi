@@ -33,7 +33,7 @@ const Contact = () => {
     setName("");
     setEmail("");
     setMessage("");
-    toast.success("Email Send Successfully!");
+    toast.success("Message Send Successfully!");
   };
 
   return (
